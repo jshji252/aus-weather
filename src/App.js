@@ -29,6 +29,8 @@ function App() {
         </a>
 
         <p>The current time is {currentTime}.</p>
+        <p>This is an updated version.</p>
+
       </header>
     </div>
   );
