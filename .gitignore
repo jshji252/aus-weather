@@ -9,7 +9,7 @@
 /coverage
 
 # production
-# /build
+/build
 
 # misc
 .DS_Store
@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # python
-# venv
+venv
 __pycache__
