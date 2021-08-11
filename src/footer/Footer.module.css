@@ -1,0 +1,16 @@
+.footerContainer {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  display: inline-block;
+}
+
+.signature {
+  font-size: 14px;
+  font-weight: 200;
+  font-style: italic;
+  text-align: right;
+}

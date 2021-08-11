@@ -1,0 +1,10 @@
+.header {
+  font-size: 50px;
+  font-weight: 800;
+  width: 50%;
+  padding-bottom: 30px;
+  border: 1px double black;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+}

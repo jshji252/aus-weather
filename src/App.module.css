@@ -1,4 +1,17 @@
-.App {
+.container {
+  font-family: "Nunito Sans", Arial, Tahoma, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +48,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

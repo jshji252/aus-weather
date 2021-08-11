@@ -1,0 +1,17 @@
+.mainContainer {
+  width: 50%;
+  height: 100%;
+  /* background-color: aquamarine; */
+}
+
+.mainTop {
+  text-align: left;
+}
+
+button {
+  width: 20%;
+}
+
+p {
+  margin: 0.5em 0;
+}
