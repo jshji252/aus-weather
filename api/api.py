@@ -1,20 +1,24 @@
-from flask import Flask
+from flask import Flask, request, jsonify
+import datetime
 import time
 import requests
 
 app = Flask(__name__)
 
-@app.route('/api/time')
-def get_current_time():
-    r = requests.get("http://reg.bom.gov.au/fwo/IDQ60901/IDQ60901.94576.json")
-    if(r.status_code == 200):
+@app.route('/api')
+def get_header():
+    def epocher(time_int):
+        # Turns the time info from BOM into epoch time
+        s=str(time_int)
+        return 1000*datetime.datetime(int(s[:4]),int(s[4:6]),int(s[6:8]),int(s[8:10]),int(s[10:12])).timestamp()
+    api_address = request.args.get("api_address")
+    r = requests.get(api_address)
+    try:
         jsn = r.json()
-        cty = jsn["observations"]["header"][0]["name"]
-        return {'time': cty}
-    else:
-        local_time = time.localtime()
-        asc_time = time.asctime(local_time)
-        return {'time': asc_time}
-
-    
-    
+        header = jsn["observations"]["header"][0]
+        weather_data = jsn["observations"]["data"]
+        datas = [{"date": epocher(data["local_date_time_full"]), "temp": data["apparent_t"], "sort_order": data["sort_order"]} for data in weather_data]
+        return jsonify(datas)
+    except:
+        print(f"Could not resolve BOM's data. Status code: {r.status_code}!")
+        return {"error": "Error Fetching Data! Please try other cities."}

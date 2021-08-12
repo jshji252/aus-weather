@@ -14,3 +14,7 @@ span {
   font-style: italic;
   text-align: right;
 }
+.copyRight {
+  font-size: 12px;
+  width: 30vw;
+}
