@@ -13,13 +13,14 @@
 
 .buttons {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
 }
-button {
+.mainButton {
   width: 18%;
 }
 
-span {
+.mainSpan {
   margin-top: 10px;
   margin-bottom: 7px;
 }
@@ -60,4 +61,33 @@ span {
 }
 a {
   font-style: italic;
+}
+
+@media screen and (max-width: 820px) {
+  .mainTop {
+    width: 80vw;
+  }
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .mainButton {
+    width: 40vw;
+  }
+  .chart {
+    width: 80vw;
+    height: 60vw;
+    padding: 0;
+  }
+  .chartTitle {
+    padding-bottom: 3px;
+    padding-top: 3px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .copyright {
+    font-size: 0.6rem;
+    width: 80vw;
+    margin: 8px 0;
+  }
 }

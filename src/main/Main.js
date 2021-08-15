@@ -57,10 +57,17 @@ export default function Main({ loading, setLoading }) {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.mainTop}>
-        <span>Choose your favourite city!</span>
+        <span className={styles.mainSpan}>Choose your favourite city!</span>
         <div className={styles.buttons}>
           {cities.map((city) => {
-            return <button onClick={() => fetchCity(city)}>{city.name}</button>;
+            return (
+              <button
+                className={styles.mainButton}
+                onClick={() => fetchCity(city)}
+              >
+                {city.name}
+              </button>
+            );
           })}
         </div>
       </div>
